@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Campus Event Management</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<nav><div class="brand">Campus Events</div><div><a href="#home">Home</a><a href="#events">Events</a><a href="#login">Login</a></div></nav>
+<header id="home" class="hero"><div><p class="tag">UNIVERSITY EVENT PORTAL</p><h1>Discover. Register. Participate.</h1><p>Find seminars, workshops, sports, competitions and student activities in one place.</p><a class="btn" href="#events">Explore Events</a></div></header>
+<main id="events"><div class="section-head"><div><p class="tag">UPCOMING</p><h2>Campus Events</h2></div><div><input id="search" placeholder="Search events..."><select id="filter"><option value="">All categories</option><option>Seminar</option><option>Workshop</option><option>Sports</option><option>Competition</option></select></div></div>
+<div id="eventsGrid" class="grid"></div></main>
+<section id="login" class="login"><h2>Student Login</h2><form id="loginForm"><input id="email" type="email" placeholder="Email" required><input id="password" type="password" placeholder="Password" required><button class="btn">Login</button></form><p id="loginMsg"></p></section>
+<footer>Campus Event Management System • Full-Stack Mini Project</footer>
+<script src="app.js"></script></body></html>
