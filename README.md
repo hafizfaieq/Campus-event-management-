@@ -19,6 +19,7 @@ A full-stack mini project for managing university events. It includes a responsi
 ## Run
 npm install
 npm start
+Open index.html in a browser.
 
 ## API
 GET `/api/events`
