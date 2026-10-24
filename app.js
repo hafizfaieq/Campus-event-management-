@@ -9,4 +9,30 @@ async function load(){try{const r=await fetch('http://localhost:5000/api/events'
 function apply(){const q=document.getElementById('search').value.toLowerCase(),c=document.getElementById('filter').value;const source=[...document.querySelectorAll('.card')];source.forEach(x=>{const ok=x.innerText.toLowerCase().includes(q)&&(c===''||x.innerText.includes(c));x.style.display=ok?'block':'none'})}
 document.getElementById('search').oninput=apply;document.getElementById('filter').onchange=apply;
 function register(id){alert('Registration submitted for event #'+id+'. Connect the backend API to save it in the database.')}
-document.getElementById('loginForm').onsubmit=async e=>{e.preventDefault();document.getElementById('loginMsg').textContent='Login form validated successfully.'}
+
+document.getElementById('loginForm').onsubmit = async e => {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const msg = document.getElementById('loginMsg');
+
+  try {
+    const response = await fetch('http://localhost:5000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Login failed');
+    }
+
+    msg.textContent = 'Login successful. Welcome, ' + data.name + '!';
+  } catch (error) {
+    msg.textContent = 'Login failed. Check your email, password, and backend server.';
+  }
+};
+
