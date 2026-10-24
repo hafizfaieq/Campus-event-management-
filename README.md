@@ -17,10 +17,8 @@ A full-stack mini project for managing university events. It includes a responsi
 - `screenshots/` — evidence folder
 
 ## Run
-1. `cd backend`
-2. `npm install`
-3. `npm start`
-4. Open `frontend/index.html` in a browser.
+npm install
+npm start
 
 ## API
 GET `/api/events`
